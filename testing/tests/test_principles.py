@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../src")
 #TODO make it with 'pip install -e.'
-from math_demo import (add, add_with_bug)
+from math_demo import (add, add_with_bug, calculate_tax_with_bug, calculate_tax)
 
 def test_addition():
     assert add(2, 2) == 4
@@ -37,6 +37,17 @@ def test_addition_communication():
     assert add(-6, 7) == 1
     print("Test ADDITION COMMUNICATION PASS")
 
+def test_tax_calculation():
+    # using only integers limits test case
+    assert calculate_tax_with_bug(1000) == 150.0
+    assert calculate_tax_with_bug(100) == 15.0
+    assert calculate_tax_with_bug(10) == 1.5
+    assert calculate_tax_with_bug(1) == 0.15
+    assert calculate_tax_with_bug(245) == 36.75
+    assert calculate_tax_with_bug(-200) == -30
+    assert calculate_tax_with_bug(0) == 0
+    print("Test ADDITION calculation PASS")
+
 
 if __name__ == "main":
     test_addition()
@@ -44,4 +55,4 @@ if __name__ == "main":
     test_addition_overcomplex()
     test_addition_reasonable()
     test_addition_with_bug()
-    
+    test_tax_calculation()
