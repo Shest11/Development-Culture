@@ -31,9 +31,17 @@ def test_addition_reasonable():
     assert add(6, 7) == 13
     assert add(-7, 0) == -7
     print("Test ADDITION REASONABLE PASS")
-    
-    
+
+def test_addition_communication():
+    assert add(7, -6) == 1
+    assert add(-6, 7) == 1
+    print("Test ADDITION COMMUNICATION PASS")
 
 
 if __name__ == "main":
     test_addition()
+    test_addition_duplicated()
+    test_addition_overcomplex()
+    test_addition_reasonable()
+    test_addition_with_bug()
+    
