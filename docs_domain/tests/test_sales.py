@@ -1,20 +1,20 @@
-from sales import _row, total
+from sales import _parse_record, total
 
 def test_row_parses_valid_line():
-    result = _row("coffee,drinks,12.5,3\n")
+    result = _parse_record("coffee,drinks,12.5,3\n")
 
     assert result == {
-        "n": "coffee",
-        "c": "drinks",
-        "a": 12.5,
-        "q": 3,
+        "product_name": "coffee",
+        "category": "drinks",
+        "unit_price": 12.5,
+        "quantity": 3,
     }
 
 
 def test_total_calculates_sum_with_discount():
     data = [
-        {"n": "coffee", "c": "drinks", "a": 10.0, "q": 2},
-        {"n": "tea", "c": "drinks", "a": 5.0, "q": 4},
+        {"product_name": "coffee", "category": "drinks", "unit_price": 10.0, "quantity": 2},
+        {"product_name": "tea", "category": "drinks", "unit_price": 5.0, "quantity": 4},
     ]
 
     assert total(data) == 40.0
