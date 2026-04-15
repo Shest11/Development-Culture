@@ -6,12 +6,14 @@
 sales documentation
 ===================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+MY DOCS
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   QUICKSTART
+   HOW_TO_CONTRIBUTE
+
+.. include:: ../DOMAIN.md
+   :parser: myst_parser.sphinx_
